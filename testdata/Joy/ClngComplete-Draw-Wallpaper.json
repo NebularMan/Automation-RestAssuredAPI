@@ -1,0 +1,21 @@
+{
+  "challengeId": 14578,
+  "challengeType": [
+    "wallpaper"
+  ],
+  "challengeTypeId": {
+    "wallpaper": 9213
+  },
+  "points": 0,
+  "couponCode": null,
+  "surveyData": [
+    {
+      "questionId": 1,
+      "answer": "Corn"
+    },
+    {
+      "questionId": 2,
+      "answer": "Baked"
+    }
+  ]
+}

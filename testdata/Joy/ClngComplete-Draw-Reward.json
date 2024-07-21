@@ -1,0 +1,21 @@
+{
+  "challengeId": 14626,
+  "challengeType": [
+    "reward"
+  ],
+  "challengeTypeId": {
+    "reward": 9387
+  },
+  "points": null,
+  "couponCode": null,
+  "surveyData": [
+    {
+      "questionId": 1,
+      "answer": "Corn"
+    },
+    {
+      "questionId": 2,
+      "answer": "Baked"
+    }
+  ]
+}

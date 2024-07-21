@@ -1,0 +1,36 @@
+{
+  "spinId": "7522",
+  "activeWedgesId": [
+    2,
+    4,
+    6,
+    5,
+    3,
+    1
+  ],
+  "assignedWedgesId": [],
+  "wedgesRwdId": {
+    "reward": {
+
+    },
+    "wallpaper": {
+      "6": 16324,
+      "4": 16324
+    },
+    "draw": {
+
+    }
+  },
+  "wedgesFrequency": {
+    "reward": {
+      "awardTimesWeekly": 100,
+      "awardTimesPerUserWeekly": 100
+    },
+    "wallpaper": {
+      "awardTimesDaily": 100,
+      "awardTimesPerUserDaily": 5,
+      "awardTimesMonthly": 100,
+      "awardTimesPerUserMonthly": 5
+    }
+  }
+}

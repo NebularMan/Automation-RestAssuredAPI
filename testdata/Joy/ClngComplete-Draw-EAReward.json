@@ -1,0 +1,21 @@
+{
+  "challengeId": 18538,
+  "challengeType": [
+    "prize"
+  ],
+  "challengeTypeId": {
+    "prize": 13439
+  },
+  "points": 0,
+  "couponCode": null,
+  "surveyData": [
+    {
+      "questionId": 1,
+      "answer": "Corn"
+    },
+    {
+      "questionId": 2,
+      "answer": "Baked and Fried"
+    }
+  ]
+}
