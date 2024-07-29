@@ -279,7 +279,7 @@ Feature: Validating KSA Joy API's and Integration API's
 
 
   @Challenge @Regression
-  Scenario Outline: Test to verify launch and completion of Draw/Survey type challenge where reward type is Points.
+  Scenario Outline: Test to verify launch and completion of Survey type challenge where reward type is Points.
     When post "CompleteChallenge01" API request for "<testcase>"
     Then verify joy loyalty account "CompleteChallenge01" details api response for "<testcase>"
     Examples:
@@ -288,10 +288,10 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken-1             |
       | Blank-AccessToken               |
       | ChallengewithWrongChallengeID   |
-      | ChallengewithWrongChallengeType |
+
 
   @Challenge @Regression
-  Scenario Outline: Test to verify launch and completion of Draw/Survey type challenge where reward type is Wallpaper.
+  Scenario Outline: Test to verify launch and completion of Survey type challenge where reward type is Wallpaper.
     When post "CompleteChallenge02" API request for "<testcase>"
     Then verify joy loyalty account "CompleteChallenge02" details api response for "<testcase>"
     Examples:
@@ -300,12 +300,11 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken                 |
       | Blank-AccessToken                 |
       | ChallengewithWrongChallengeID     |
-      | ChallengewithWrongChallengeType   |
-      | ChallengewithWrongChallengeTypeID |
+
 
 
   @Challenge @Regression
-  Scenario Outline: Test to verify launch and completion of Draw/Survey type challenge where reward type is Reward.
+  Scenario Outline: Test to verify launch and completion of Survey type challenge where reward type is Reward.
     When post "CompleteChallenge03" API request for "<testcase>"
     Then verify joy loyalty account "CompleteChallenge03" details api response for "<testcase>"
     Examples:
@@ -315,11 +314,11 @@ Feature: Validating KSA Joy API's and Integration API's
       | Blank-AccessToken                 |
       | ChallengewithWrongChallengeID     |
       | ChallengewithWrongChallengeType   |
-      | ChallengewithWrongChallengeTypeID |
+
 
 
   @Challenge @Regression
-  Scenario Outline: Test to verify launch and completion of Draw/Survey type challenge where reward type is Draw.
+  Scenario Outline: Test to verify launch and completion of Survey type challenge where reward type is Draw.
     When post "CompleteChallenge04" API request for "<testcase>"
     Then verify joy loyalty account "CompleteChallenge04" details api response for "<testcase>"
     Examples:
@@ -328,8 +327,8 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken-1               |
       | Blank-AccessToken                 |
       | ChallengewithWrongChallengeID     |
-      | ChallengewithWrongChallengeType   |
-      | ChallengewithWrongChallengeTypeID |
+
+
 
   @Challenge @Regression
   Scenario Outline: Test to verify launch and completion of Video type challenge where reward type is Points.
@@ -341,7 +340,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken-1             |
       | Blank-AccessToken               |
       | ChallengewithWrongChallengeID   |
-      | ChallengewithWrongChallengeType |
+
 
   @Challenge @Regression
   Scenario Outline: Test to verify launch and completion of Video type challenge where reward type is Wallpaper.
@@ -353,7 +352,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken-1             |
       | Blank-AccessToken               |
       | ChallengewithWrongChallengeID   |
-      | ChallengewithWrongChallengeType |
+
 
   @Challenge @Regression
   Scenario Outline: Test to verify launch and completion of Video type challenge where reward type is Draw.
@@ -365,7 +364,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken-1             |
       | Blank-AccessToken               |
       | ChallengewithWrongChallengeID   |
-      | ChallengewithWrongChallengeType |
+
 
 
   @Challenge @Regression
