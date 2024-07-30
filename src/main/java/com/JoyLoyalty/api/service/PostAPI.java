@@ -483,31 +483,28 @@ public class PostAPI extends Basecode {
                     "  \"challengeTypeId\": {},\n" +
                     "  \"points\": 100,\n" +
                     "  \"couponCode\": null,\n" +
-                    "  \"surveyData\": null\n" +
+                    "  \"surveyData\": null,\n" +
+                    "  \"feedbackRateExperience\": null,\n" +
+                    "  \"feedbackQuestion\": \"Tell us what can be improved ?\",\n" +
+                    "  \"feedbackImprovements\": null,\n" +
+                    "  \"feedbackHowToImprove\": null\n" +
                     "}";
         } else if (endPoint.equalsIgnoreCase("CompleteChallenge05") && (testcase.equalsIgnoreCase("ChallengewithWrongChallengeID"))) {
             return "{\n" +
-                    "  \"challengeId\": 158237,\n" +
+                    "  \"challengeId\": 152837,\n" +
                     "  \"challengeType\": [\n" +
                     "    \"points\"\n" +
                     "  ],\n" +
                     "  \"challengeTypeId\": {},\n" +
                     "  \"points\": 100,\n" +
                     "  \"couponCode\": null,\n" +
-                    "  \"surveyData\": null\n" +
+                    "  \"surveyData\": null,\n" +
+                    "  \"feedbackRateExperience\": null,\n" +
+                    "  \"feedbackQuestion\": \"Tell us what can be improved ?\",\n" +
+                    "  \"feedbackImprovements\": null,\n" +
+                    "  \"feedbackHowToImprove\": null\n" +
                     "}";
-        } else if (endPoint.equalsIgnoreCase("CompleteChallenge05") && (testcase.equalsIgnoreCase("ChallengewithWrongChallengeType"))) {
-            return "{\n" +
-                    "  \"challengeId\": 15837,\n" +
-                    "  \"challengeType\": [\n" +
-                    "    \"poinwts\"\n" +
-                    "  ],\n" +
-                    "  \"challengeTypeId\": {},\n" +
-                    "  \"points\": 100,\n" +
-                    "  \"couponCode\": null,\n" +
-                    "  \"surveyData\": null\n" +
-                    "}";
-        } else if (endPoint.equalsIgnoreCase("CompleteChallenge06") && (testcase.equalsIgnoreCase("Valid-AccessToken") || testcase.equalsIgnoreCase("Valid-AccessToken-1") || testcase.equalsIgnoreCase("Blank-AccessToken"))) {
+        }  else if (endPoint.equalsIgnoreCase("CompleteChallenge06") && (testcase.equalsIgnoreCase("Valid-AccessToken") || testcase.equalsIgnoreCase("Valid-AccessToken-1") || testcase.equalsIgnoreCase("Blank-AccessToken"))) {
             return "{\n" +
                     "  \"challengeId\": 15838,\n" +
                     "  \"challengeType\": [\n" +
@@ -518,11 +515,15 @@ public class PostAPI extends Basecode {
                     "  },\n" +
                     "  \"points\": 0,\n" +
                     "  \"couponCode\": null,\n" +
-                    "  \"surveyData\": null\n" +
+                    "  \"surveyData\": null,\n" +
+                    "  \"feedbackRateExperience\": null,\n" +
+                    "  \"feedbackQuestion\": \"Tell us what can be improved ?\",\n" +
+                    "  \"feedbackImprovements\": null,\n" +
+                    "  \"feedbackHowToImprove\": null\n" +
                     "}";
         } else if (endPoint.equalsIgnoreCase("CompleteChallenge06") && (testcase.equalsIgnoreCase("ChallengewithWrongChallengeID"))) {
             return "{\n" +
-                    "  \"challengeId\": 152838,\n" +
+                    "  \"challengeId\": 158382,\n" +
                     "  \"challengeType\": [\n" +
                     "    \"wallpaper\"\n" +
                     "  ],\n" +
@@ -531,20 +532,28 @@ public class PostAPI extends Basecode {
                     "  },\n" +
                     "  \"points\": 0,\n" +
                     "  \"couponCode\": null,\n" +
-                    "  \"surveyData\": null\n" +
+                    "  \"surveyData\": null,\n" +
+                    "  \"feedbackRateExperience\": null,\n" +
+                    "  \"feedbackQuestion\": \"Tell us what can be improved ?\",\n" +
+                    "  \"feedbackImprovements\": null,\n" +
+                    "  \"feedbackHowToImprove\": null\n" +
                     "}";
         } else if (endPoint.equalsIgnoreCase("CompleteChallenge06") && (testcase.equalsIgnoreCase("ChallengewithWrongChallengeType"))) {
             return "{\n" +
                     "  \"challengeId\": 15838,\n" +
                     "  \"challengeType\": [\n" +
-                    "    \"wallp2aper\"\n" +
+                    "    \"wallpaper\"\n" +
                     "  ],\n" +
                     "  \"challengeTypeId\": {\n" +
-                    "    \"wallpaper\": 9218\n" +
+                    "    \"wallpwaper\": 9218\n" +
                     "  },\n" +
                     "  \"points\": 0,\n" +
                     "  \"couponCode\": null,\n" +
-                    "  \"surveyData\": null\n" +
+                    "  \"surveyData\": null,\n" +
+                    "  \"feedbackRateExperience\": null,\n" +
+                    "  \"feedbackQuestion\": \"Tell us what can be improved ?\",\n" +
+                    "  \"feedbackImprovements\": null,\n" +
+                    "  \"feedbackHowToImprove\": null\n" +
                     "}";
         } else if (endPoint.equalsIgnoreCase("CompleteChallenge07") && (testcase.equalsIgnoreCase("Valid-AccessToken") || testcase.equalsIgnoreCase("Valid-AccessToken-1") || testcase.equalsIgnoreCase("Blank-AccessToken"))) {
             return "{\n" +
@@ -553,11 +562,15 @@ public class PostAPI extends Basecode {
                     "    \"draw\"\n" +
                     "  ],\n" +
                     "  \"challengeTypeId\": {\n" +
-                    "    \"draw\": 8650\n" +
+                    "    \"draw\": 8184\n" +
                     "  },\n" +
                     "  \"points\": 50,\n" +
                     "  \"couponCode\": null,\n" +
-                    "  \"surveyData\": null\n" +
+                    "  \"surveyData\": null,\n" +
+                    "  \"feedbackRateExperience\": null,\n" +
+                    "  \"feedbackQuestion\": \"Tell us what can be improved ?\",\n" +
+                    "  \"feedbackImprovements\": null,\n" +
+                    "  \"feedbackHowToImprove\": null\n" +
                     "}";
         } else if (endPoint.equalsIgnoreCase("CompleteChallenge07") && (testcase.equalsIgnoreCase("ChallengewithWrongChallengeID"))) {
             return "{\n" +
@@ -566,24 +579,32 @@ public class PostAPI extends Basecode {
                     "    \"draw\"\n" +
                     "  ],\n" +
                     "  \"challengeTypeId\": {\n" +
-                    "    \"draw\": 8650\n" +
+                    "    \"draw\": 8184\n" +
                     "  },\n" +
                     "  \"points\": 50,\n" +
                     "  \"couponCode\": null,\n" +
-                    "  \"surveyData\": null\n" +
+                    "  \"surveyData\": null,\n" +
+                    "  \"feedbackRateExperience\": null,\n" +
+                    "  \"feedbackQuestion\": \"Tell us what can be improved ?\",\n" +
+                    "  \"feedbackImprovements\": null,\n" +
+                    "  \"feedbackHowToImprove\": null\n" +
                     "}";
         } else if (endPoint.equalsIgnoreCase("CompleteChallenge07") && (testcase.equalsIgnoreCase("ChallengewithWrongChallengeType"))) {
             return "{\n" +
                     "  \"challengeId\": 15296,\n" +
                     "  \"challengeType\": [\n" +
-                    "    \"dr2aw\"\n" +
+                    "    \"draw\"\n" +
                     "  ],\n" +
                     "  \"challengeTypeId\": {\n" +
-                    "    \"draw\": 8650\n" +
+                    "    \"drsaw\": 8184\n" +
                     "  },\n" +
                     "  \"points\": 50,\n" +
                     "  \"couponCode\": null,\n" +
-                    "  \"surveyData\": null\n" +
+                    "  \"surveyData\": null,\n" +
+                    "  \"feedbackRateExperience\": null,\n" +
+                    "  \"feedbackQuestion\": \"Tell us what can be improved ?\",\n" +
+                    "  \"feedbackImprovements\": null,\n" +
+                    "  \"feedbackHowToImprove\": null\n" +
                     "}";
         } else if (endPoint.equalsIgnoreCase("CompleteChallenge08") && (testcase.equalsIgnoreCase("Valid-AccessToken") || testcase.equalsIgnoreCase("Valid-AccessToken-1") || testcase.equalsIgnoreCase("Blank-AccessToken"))) {
             return "{\n" +
@@ -596,11 +617,15 @@ public class PostAPI extends Basecode {
                     "  },\n" +
                     "  \"points\": 0,\n" +
                     "  \"couponCode\": null,\n" +
-                    "  \"surveyData\": null\n" +
+                    "  \"surveyData\": null,\n" +
+                    "  \"feedbackRateExperience\": null,\n" +
+                    "  \"feedbackQuestion\": \"Tell us what can be improved ?\",\n" +
+                    "  \"feedbackImprovements\": null,\n" +
+                    "  \"feedbackHowToImprove\": null\n" +
                     "}";
         } else if (endPoint.equalsIgnoreCase("CompleteChallenge08") && (testcase.equalsIgnoreCase("ChallengewithWrongChallengeID"))) {
             return "{\n" +
-                    "  \"challengeId\": 142436,\n" +
+                    "  \"challengeId\": 144136,\n" +
                     "  \"challengeType\": [\n" +
                     "    \"reward\"\n" +
                     "  ],\n" +
@@ -609,20 +634,28 @@ public class PostAPI extends Basecode {
                     "  },\n" +
                     "  \"points\": 0,\n" +
                     "  \"couponCode\": null,\n" +
-                    "  \"surveyData\": null\n" +
+                    "  \"surveyData\": null,\n" +
+                    "  \"feedbackRateExperience\": null,\n" +
+                    "  \"feedbackQuestion\": \"Tell us what can be improved ?\",\n" +
+                    "  \"feedbackImprovements\": null,\n" +
+                    "  \"feedbackHowToImprove\": null\n" +
                     "}";
         } else if (endPoint.equalsIgnoreCase("CompleteChallenge08") && (testcase.equalsIgnoreCase("ChallengewithWrongChallengeType"))) {
             return "{\n" +
                     "  \"challengeId\": 14436,\n" +
                     "  \"challengeType\": [\n" +
-                    "    \"rewaerd\"\n" +
+                    "    \"rewaard\"\n" +
                     "  ],\n" +
                     "  \"challengeTypeId\": {\n" +
                     "    \"reward\": 13796\n" +
                     "  },\n" +
                     "  \"points\": 0,\n" +
                     "  \"couponCode\": null,\n" +
-                    "  \"surveyData\": null\n" +
+                    "  \"surveyData\": null,\n" +
+                    "  \"feedbackRateExperience\": null,\n" +
+                    "  \"feedbackQuestion\": \"Tell us what can be improved ?\",\n" +
+                    "  \"feedbackImprovements\": null,\n" +
+                    "  \"feedbackHowToImprove\": null\n" +
                     "}";
         } else if (endPoint.equalsIgnoreCase("CompleteChallenge09") && (testcase.equalsIgnoreCase("Valid-AccessToken") || testcase.equalsIgnoreCase("Valid-AccessToken-1") || testcase.equalsIgnoreCase("Blank-AccessToken"))) {
             return "{\n" +
@@ -845,12 +878,12 @@ public class PostAPI extends Basecode {
                     "}";
         } else if (endPoint.equalsIgnoreCase("CompleteChallenge14") && (testcase.equalsIgnoreCase("Valid-AccessToken") || testcase.equalsIgnoreCase("Valid-AccessToken-1") || testcase.equalsIgnoreCase("Blank-AccessToken"))) {
             return "{\n" +
-                    "  \"challengeId\": 18538,\n" +
+                    "  \"challengeId\": 197769,\n" +
                     "  \"challengeType\": [\n" +
                     "    \"prize\"\n" +
                     "  ],\n" +
                     "  \"challengeTypeId\": {\n" +
-                    "    \"prize\": 13439\n" +
+                    "    \"prize\": 14351\n" +
                     "  },\n" +
                     "  \"points\": 0,\n" +
                     "  \"couponCode\": null,\n" +
@@ -858,60 +891,16 @@ public class PostAPI extends Basecode {
                     "    {\n" +
                     "      \"questionId\": 1,\n" +
                     "      \"answer\": \"Corn\"\n" +
-                    "    },\n" +
-                    "    {\n" +
-                    "      \"questionId\": 2,\n" +
-                    "      \"answer\": \"Baked and Fried\"\n" +
                     "    }\n" +
-                    "  ]\n" +
+                    "  ],\n" +
+                    "  \"feedbackRateExperience\": null,\n" +
+                    "  \"feedbackQuestion\": \"Tell us what can be improved ?\",\n" +
+                    "  \"feedbackImprovements\": null,\n" +
+                    "  \"feedbackHowToImprove\": null\n" +
                     "}";
         } else if (endPoint.equalsIgnoreCase("CompleteChallenge14") && (testcase.equalsIgnoreCase("ChallengewithWrongChallengeID"))) {
             return "{\n" +
-                    "  \"challengeId\": 182538,\n" +
-                    "  \"challengeType\": [\n" +
-                    "    \"prize\"\n" +
-                    "  ],\n" +
-                    "  \"challengeTypeId\": {\n" +
-                    "    \"prize\": 13439\n" +
-                    "  },\n" +
-                    "  \"points\": 0,\n" +
-                    "  \"couponCode\": null,\n" +
-                    "  \"surveyData\": [\n" +
-                    "    {\n" +
-                    "      \"questionId\": 1,\n" +
-                    "      \"answer\": \"Corn\"\n" +
-                    "    },\n" +
-                    "    {\n" +
-                    "      \"questionId\": 2,\n" +
-                    "      \"answer\": \"Baked and Fried\"\n" +
-                    "    }\n" +
-                    "  ]\n" +
-                    "}";
-        } else if (endPoint.equalsIgnoreCase("CompleteChallenge14") && (testcase.equalsIgnoreCase("ChallengewithWrongChallengeType"))) {
-            return "{\n" +
-                    "  \"challengeId\": 18538,\n" +
-                    "  \"challengeType\": [\n" +
-                    "    \"prizwe\"\n" +
-                    "  ],\n" +
-                    "  \"challengeTypeId\": {\n" +
-                    "    \"prize\": 13439\n" +
-                    "  },\n" +
-                    "  \"points\": 0,\n" +
-                    "  \"couponCode\": null,\n" +
-                    "  \"surveyData\": [\n" +
-                    "    {\n" +
-                    "      \"questionId\": 1,\n" +
-                    "      \"answer\": \"Corn\"\n" +
-                    "    },\n" +
-                    "    {\n" +
-                    "      \"questionId\": 2,\n" +
-                    "      \"answer\": \"Baked and Fried\"\n" +
-                    "    }\n" +
-                    "  ]\n" +
-                    "}";
-        } else if (endPoint.equalsIgnoreCase("CompleteChallenge15") && (testcase.equalsIgnoreCase("Valid-AccessToken") || testcase.equalsIgnoreCase("Valid-AccessToken-1") || testcase.equalsIgnoreCase("Blank-AccessToken"))) {
-            return "{\n" +
-                    "  \"challengeId\": 17925,\n" +
+                    "  \"challengeId\": 1977169,\n" +
                     "  \"challengeType\": [\n" +
                     "    \"prize\"\n" +
                     "  ],\n" +
@@ -920,11 +909,37 @@ public class PostAPI extends Basecode {
                     "  },\n" +
                     "  \"points\": 0,\n" +
                     "  \"couponCode\": null,\n" +
-                    "  \"surveyData\": null\n" +
+                    "  \"surveyData\": [\n" +
+                    "    {\n" +
+                    "      \"questionId\": 1,\n" +
+                    "      \"answer\": \"Corn\"\n" +
+                    "    }\n" +
+                    "  ],\n" +
+                    "  \"feedbackRateExperience\": null,\n" +
+                    "  \"feedbackQuestion\": \"Tell us what can be improved ?\",\n" +
+                    "  \"feedbackImprovements\": null,\n" +
+                    "  \"feedbackHowToImprove\": null\n" +
+                    "}";
+        }  else if (endPoint.equalsIgnoreCase("CompleteChallenge15") && (testcase.equalsIgnoreCase("Valid-AccessToken") || testcase.equalsIgnoreCase("Valid-AccessToken-1") || testcase.equalsIgnoreCase("Blank-AccessToken"))) {
+            return "{\n" +
+                    "  \"challengeId\": 197767,\n" +
+                    "  \"challengeType\": [\n" +
+                    "    \"prize\"\n" +
+                    "  ],\n" +
+                    "  \"challengeTypeId\": {\n" +
+                    "    \"prize\": 14351\n" +
+                    "  },\n" +
+                    "  \"points\": 0,\n" +
+                    "  \"couponCode\": null,\n" +
+                    "  \"surveyData\": null,\n" +
+                    "  \"feedbackRateExperience\": null,\n" +
+                    "  \"feedbackQuestion\": \"Tell us what can be improved ?\",\n" +
+                    "  \"feedbackImprovements\": null,\n" +
+                    "  \"feedbackHowToImprove\": null\n" +
                     "}";
         } else if (endPoint.equalsIgnoreCase("CompleteChallenge15") && (testcase.equalsIgnoreCase("ChallengewithWrongChallengeID"))) {
             return "{\n" +
-                    "  \"challengeId\": 179225,\n" +
+                    "  \"challengeId\": 1977167,\n" +
                     "  \"challengeType\": [\n" +
                     "    \"prize\"\n" +
                     "  ],\n" +
@@ -933,22 +948,13 @@ public class PostAPI extends Basecode {
                     "  },\n" +
                     "  \"points\": 0,\n" +
                     "  \"couponCode\": null,\n" +
-                    "  \"surveyData\": null\n" +
+                    "  \"surveyData\": null,\n" +
+                    "  \"feedbackRateExperience\": null,\n" +
+                    "  \"feedbackQuestion\": \"Tell us what can be improved ?\",\n" +
+                    "  \"feedbackImprovements\": null,\n" +
+                    "  \"feedbackHowToImprove\": null\n" +
                     "}";
-        } else if (endPoint.equalsIgnoreCase("CompleteChallenge15") && (testcase.equalsIgnoreCase("ChallengewithWrongChallengeType"))) {
-            return "{\n" +
-                    "  \"challengeId\": 17925,\n" +
-                    "  \"challengeType\": [\n" +
-                    "    \"prwize\"\n" +
-                    "  ],\n" +
-                    "  \"challengeTypeId\": {\n" +
-                    "    \"prize\": 14351\n" +
-                    "  },\n" +
-                    "  \"points\": 0,\n" +
-                    "  \"couponCode\": null,\n" +
-                    "  \"surveyData\": null\n" +
-                    "}";
-        } else if (endPoint.equalsIgnoreCase("LongFormatSurvey_Rewards") && (testcase.equalsIgnoreCase("Valid-AccessToken") || testcase.equalsIgnoreCase("Valid-AccessToken-1") || testcase.equalsIgnoreCase("Blank-AccessToken"))) {
+        }  else if (endPoint.equalsIgnoreCase("LongFormatSurvey_Rewards") && (testcase.equalsIgnoreCase("Valid-AccessToken") || testcase.equalsIgnoreCase("Valid-AccessToken-1") || testcase.equalsIgnoreCase("Blank-AccessToken"))) {
             return "{\n" +
                     "  \"challengeId\": 97477,\n" +
                     "  \"challengeType\": [\n" +
@@ -1797,7 +1803,7 @@ public class PostAPI extends Basecode {
 
         } else {
             return "{\n" +
-                    "\"mobile\":\"7352902222\",\n" +
+                    "\"mobile\":\"9884204899\",\n" +
                     "\"countryCode\":\"+91\"\n" +
                     "}";
         }

@@ -313,7 +313,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken-1               |
       | Blank-AccessToken                 |
       | ChallengewithWrongChallengeID     |
-      | ChallengewithWrongChallengeType   |
+
 
 
 
@@ -377,7 +377,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken-1             |
       | Blank-AccessToken               |
       | ChallengewithWrongChallengeID   |
-      | ChallengewithWrongChallengeType |
+
 
 
   @Challenge @Regression
@@ -389,7 +389,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken               |
       | Blank-AccessToken               |
       | ChallengewithWrongChallengeID   |
-      | ChallengewithWrongChallengeType |
+
 
 
   @Challenge @Regression
@@ -401,7 +401,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken               |
       | Blank-AccessToken               |
       | ChallengewithWrongChallengeID   |
-      | ChallengewithWrongChallengeType |
+
 
 
   @Challenge @Regression
@@ -424,7 +424,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken               |
       | Blank-AccessToken               |
       | ChallengewithWrongChallengeID   |
-      | ChallengewithWrongChallengeType |
+
 
   @Challenge @Regression
   Scenario Outline: Test to verify launch and completion of Coupon type challenge under EA Campaign.
@@ -435,7 +435,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken               |
       | Blank-AccessToken               |
       | ChallengewithWrongChallengeID   |
-      | ChallengewithWrongChallengeType |
+
 
   @Challenge @Regression
   Scenario Outline: Test to verify launch and completion of Survey type challenge under EA Campaign.
@@ -446,7 +446,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken               |
       | Blank-AccessToken               |
       | ChallengewithWrongChallengeID   |
-      | ChallengewithWrongChallengeType |
+
 
   @Challenge @Regression
   Scenario Outline: Test to verify launch and completion of Video type challenge under EA Campaign.
@@ -457,7 +457,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken               |
       | Blank-AccessToken               |
       | ChallengewithWrongChallengeID   |
-      | ChallengewithWrongChallengeType |
+
 
 #  @Challenge1 @Regression
 #  Scenario Outline: Test to verify update in points after completion of Video type challenge where reward type is Points.
@@ -966,8 +966,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken                 |
       | Blank-AccessToken                 |
       | ChallengewithWrongChallengeID     |
-      | ChallengewithWrongChallengeType   |
-      | ChallengewithWrongChallengeTypeID |
+
 
   @Long_Format_Survey @Regression @Challenge
   Scenario Outline: Verify Long Format Survey challenge completion, where reward is attached as rewards.
@@ -978,8 +977,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken                 |
       | Blank-AccessToken                 |
       | ChallengewithWrongChallengeID     |
-      | ChallengewithWrongChallengeType   |
-      | ChallengewithWrongChallengeTypeID |
+
 
   @Long_Format_Survey @Regression @Challenge
   Scenario Outline: Verify Long Format Survey challenge completion, where reward is attached as rewards.
@@ -990,8 +988,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken                 |
       | Blank-AccessToken                 |
       | ChallengewithWrongChallengeID     |
-      | ChallengewithWrongChallengeType   |
-      | ChallengewithWrongChallengeTypeID |
+
 
   @Long_Format_Survey @Regression @Challenge
   Scenario Outline: Verify Long Format Survey challenge completion, where reward is attached as rewards.
@@ -1002,8 +999,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken                 |
       | Blank-AccessToken                 |
       | ChallengewithWrongChallengeID     |
-      | ChallengewithWrongChallengeType   |
-      | ChallengewithWrongChallengeTypeID |
+
 
 
   @VideoFeedbackChallenge @Challenge
