@@ -652,7 +652,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken |
       | Blank-AccessToken |
 
-  @Points @Regression
+  @Points
   Scenario Outline: Verify updation in total points when customer update his/her accounts.
     Given HTTP PUT request of "Updatepoint_throughSpinPlay" API for "<testcase>".
     Then verify joy loyalty account "Updatepoint_throughSpinPlay" details api response for "<testcase>"

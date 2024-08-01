@@ -1220,24 +1220,24 @@ public class PostAPI extends Basecode {
                     "}";
         } else if (endPoint.equalsIgnoreCase("Spin_Wedge_Generate") && ((testcase.equalsIgnoreCase("Valid-AccessToken")) || (testcase.equalsIgnoreCase("Blank-AccessToken")))) {
             return "{\n" +
-                    "  \"spinId\": \"13797\",\n" +
+                    "  \"spinId\": \"27724\",\n" +
                     "  \"activeWedgesId\": [\n" +
-                    "    6,\n" +
                     "    5,\n" +
                     "    4,\n" +
                     "    3,\n" +
+                    "    2,\n" +
                     "    1\n" +
                     "  ],\n" +
                     "  \"assignedWedgesId\": [],\n" +
                     "  \"wedgesRwdId\": {\n" +
                     "    \"reward\": {\n" +
-                    "      \"4\": 27057\n" +
+                    "      \"4\": 192726\n" +
                     "    },\n" +
                     "    \"wallpaper\": {\n" +
-                    "      \"6\": 9213\n" +
+                    "      \"2\": 9216\n" +
                     "    },\n" +
                     "    \"draw\": {\n" +
-                    "      \"3\": 8650\n" +
+                    "      \"5\": 10883\n" +
                     "    }\n" +
                     "  },\n" +
                     "  \"wedgesFrequency\": {}\n" +
@@ -1817,9 +1817,12 @@ public class PostAPI extends Basecode {
 
         if (endPoint.equalsIgnoreCase("UpdatePnt_ThrProfileUpdt")) {
             return "{\n" +
-                    "\"action\":\"credit\",\n" +
-                    "\"activityType\" : \"profile\",\n" +
-                    "\"points\" : 50\n" +
+                    "  \"action\": \"credit\",\n" +
+                    "  \"activityType\": \"profile\",\n" +
+                    "  \"activityTypeId\": null,\n" +
+                    "  \"wedgeId\": null,\n" +
+                    "  \"points\": 100,\n" +
+                    "  \"lastInertId\": null\n" +
                     "}";
         } else if (endPoint.equalsIgnoreCase("updatepoint_throughSpinPlay")) {
             return "{\n" +
