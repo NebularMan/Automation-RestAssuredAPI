@@ -1,13 +1,10 @@
 @API-Joy-Loyalty
 Feature: Validating KSA Joy API's and Integration API's
 
-#  @API-Joy-Loyalty-AccessToken-01
-#  Scenario Outline: Verify  AccessToken  API
-#    Given post  latam "Okta" request for "<testcase>"
-#    Given send get request to latam "Okta" for "<testcase>"
-#    Examples:
-#      | testcase     |
-#      | Valid-UserId |
+  @Token
+  Scenario: Verify  AccessToken  API
+    Given send get request for token of joy loyalty "OKTA"
+    Then verify joy loyalty for token "OKTA"
 
   @Regression @Feature
   Scenario Outline: Verify Get Features API
@@ -49,7 +46,7 @@ Feature: Validating KSA Joy API's and Integration API's
     Then verify joy loyalty "CompletedChallenges" details api response for "<testcase>"
     Examples:
       | testcase          |
-      | Blank-AccessToken |
+#      | Blank-AccessToken |
       | Valid-AccessToken |
 
   @Regression @Accounts
@@ -69,14 +66,6 @@ Feature: Validating KSA Joy API's and Integration API's
       | Blank-AccessToken |
       | Valid-AccessToken |
 
-  @Regression @Accounts
-  Scenario Outline: Verify that customer is able to update "Email" Address in the Application.
-    Given HTTP PUT request of "email_Update" API for "<testcase>".
-    Then verify joy loyalty account "email_Update" details api response for "<testcase>"
-    Examples:
-      | testcase          |
-      | Valid-AccessToken |
-      | Blank-AccessToken |
 
   @DeleteUser
   Scenario Outline: Verify that customer is able to update "Mobile Number" in the Application.
@@ -115,6 +104,69 @@ Feature: Validating KSA Joy API's and Integration API's
       | testcase          |
       | Valid-AccessToken |
 
+  @Regression @ProfileCompletion
+  Scenario Outline: Test to verify Profile Completion Pop-up when user tried to play Survey Challenge.
+    When post "ProfileCompltn_Survey" API request for "<testcase>"
+    Then verify joy loyalty account "ProfileCompltn_Survey" details api response for "<testcase>"
+    Examples:
+      | testcase          |
+      | Blank-AccessToken |
+      | Valid-AccessToken |
+
+  @Regression @ProfileCompletion
+  Scenario Outline: Test to verify Profile Completion Pop-up when user tried to play Video Feedback Challenge.
+    When post "ProfileCompltn_Video" API request for "<testcase>"
+    Then verify joy loyalty account "ProfileCompltn_Video" details api response for "<testcase>"
+    Examples:
+      | testcase          |
+      | Blank-AccessToken |
+      | Valid-AccessToken |
+
+  @Regression @ProfileCompletion
+  Scenario Outline: Test to verify Profile Completion Pop-up when user tried to play Scan Challenge.
+    When post "ProfileCompltn_Scan" API request for "<testcase>"
+    Then verify joy loyalty account "ProfileCompltn_Scan" details api response for "<testcase>"
+    Examples:
+      | testcase          |
+      | Blank-AccessToken |
+      | Valid-AccessToken |
+
+  @Regression @ProfileCompletion
+  Scenario Outline: Test to verify Profile Completion Pop-up when user tried to play Coupon Code Challenge.
+    When post "ProfileCompltn_Coupon" API request for "<testcase>"
+    Then verify joy loyalty account "ProfileCompltn_Coupon" details api response for "<testcase>"
+    Examples:
+      | testcase          |
+      | Blank-AccessToken |
+      | Valid-AccessToken |
+
+  @Regression @ProfileCompletion
+  Scenario Outline: Test to verify Profile Completion Pop-up when user tried to play Long Format Challenge.
+    When post "ProfileCompltn_LFSurvey" API request for "<testcase>"
+    Then verify joy loyalty account "ProfileCompltn_LFSurvey" details api response for "<testcase>"
+    Examples:
+      | testcase          |
+      | Blank-AccessToken |
+      | Valid-AccessToken |
+
+  @Regression @ProfileCompletion
+  Scenario Outline: Test to verify Profile Completion Pop-up when user tried to redeem reward.
+    When post "ProfileCompltn_Reward" API request for "<testcase>"
+    Then verify joy loyalty account "ProfileCompltn_Reward" details api response for "<testcase>"
+    Examples:
+      | testcase          |
+      | Blank-AccessToken |
+      | Valid-AccessToken |
+
+  @Regression @Accounts
+  Scenario Outline: Verify that customer is able to update "Email" Address in the Application.
+    Given HTTP PUT request of "email_Update" API for "<testcase>".
+    Then verify joy loyalty account "email_Update" details api response for "<testcase>"
+    Examples:
+      | testcase          |
+      | Valid-AccessToken |
+      | Blank-AccessToken |
+
   @Regression @Accounts
   Scenario Outline:  Verify customer details in Joy Application after update.
     Given HTTP PUT request of "account_Update" API for "<testcase>".
@@ -123,6 +175,15 @@ Feature: Validating KSA Joy API's and Integration API's
       | testcase          |
       | Valid-AccessToken |
       | Blank-AccessToken |
+
+  @Regression @ProfileCompletion
+  Scenario Outline: Test to verify Profile Completion Pop-up when user tried to play Survey Challenge.
+    When post "ProfileCompltn_SurveyP" API request for "<testcase>"
+    Then verify joy loyalty account "ProfileCompltn_SurveyP" details api response for "<testcase>"
+    Examples:
+      | testcase          |
+      | Blank-AccessToken |
+      | Valid-AccessToken |
 
   @Regression @Accounts @Smoke
   Scenario Outline: Verify customer status in Joy Application after deletion.
@@ -413,7 +474,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken               |
       | Blank-AccessToken               |
       | ChallengewithWrongChallengeID   |
-      | ChallengewithWrongChallengeType |
+
 
   @Challenge @Regression
   Scenario Outline: Test to verify launch and completion of Coupon type challenge where reward type is Draw.
@@ -643,7 +704,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | testcase          |
       | Valid-AccessToken |
 
-  @Points @Regression
+  @Points
   Scenario Outline: Verify updation in total points when customer play the spin.
     Given HTTP PUT request of "UpdatePnt_ThrProfileUpdt" API for "<testcase>".
     Then verify joy loyalty account "UpdatePnt_ThrProfileUpdt" details api response for "<testcase>"
@@ -835,7 +896,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Blank-AccessToken |
 
 
-  @SegmentChallenge @Regression
+  @SegmentChallenge1 @Regression
   Scenario Outline: Verify availability of Segmented challenge for Male customer.
     Given HTTP PUT request of "account_Update_Seg_MaleOnly" API for "<testcase>".
     Then verify joy loyalty account "account_Update_Seg_MaleOnly" details api response for "<testcase>"
@@ -1002,7 +1063,7 @@ Feature: Validating KSA Joy API's and Integration API's
 
 
 
-  @VideoFeedbackChallenge @Challenge
+  @VideoFeedbackChallenge @Challenge @Regression
   Scenario Outline: Test to verify successfully completion of Video challenge with feedback (User provided only Star Rating) where rewards is attached as points.
     When post "Video_Feedback_StarOnly_Points" API request for "<testcase>"
     Then verify joy loyalty account "Video_Feedback_StarOnly_Points" details api response for "<testcase>"
@@ -1011,7 +1072,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken |
       | Blank-AccessToken |
 
-  @VideoFeedbackChallenge @Challenge
+  @VideoFeedbackChallenge @Challenge @Regression
   Scenario Outline: Test to verify successfully completion of Video challenge with feedback (User answered feedback question only) where rewards is attached as points.
     When post "Video_Feedback_QstnOnly_Point" API request for "<testcase>"
     Then verify joy loyalty account "Video_Feedback_QstnOnly_Point" details api response for "<testcase>"
@@ -1020,7 +1081,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken |
       | Blank-AccessToken |
 
-  @VideoFeedbackChallenge @Challenge
+  @VideoFeedbackChallenge @Challenge @Regression
   Scenario Outline: Test to verify successfully completion of Video challenge with feedback (User provided only text feedback) where rewards is attached as points.
     When post "Video_Feedback_TextOnly_Points" API request for "<testcase>"
     Then verify joy loyalty account "Video_Feedback_TextOnly_Points" details api response for "<testcase>"
@@ -1029,7 +1090,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken |
       | Blank-AccessToken |
 
-  @VideoFeedbackChallenge @Challenge
+  @VideoFeedbackChallenge @Challenge @Regression
   Scenario Outline: Test to verify successfully completion of Video challenge with feedback (User provided all three types feedback) where rewards is attached as points.
     When post "Video_Feedback_AllFdback_Point" API request for "<testcase>"
     Then verify joy loyalty account "Video_Feedback_AllFdback_Point" details api response for "<testcase>"
@@ -1038,7 +1099,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken |
       | Blank-AccessToken |
 
-  @VideoFeedbackChallenge @Challenge
+  @VideoFeedbackChallenge @Challenge @Regression
   Scenario Outline: Test to verify successfull completion of Video challenge with feedback (User provided only Star Rating ) where rewards is attached as voucher.
     When post "Video_Feedback_StarOnly_Vochr" API request for "<testcase>"
     Then verify joy loyalty account "Video_Feedback_StarOnly_Vochr" details api response for "<testcase>"
@@ -1047,7 +1108,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken |
       | Blank-AccessToken |
 
-  @VideoFeedbackChallenge @Challenge
+  @VideoFeedbackChallenge @Challenge @Regression
   Scenario Outline: Test to verify successfully completion of Video challenge with feedback (User answered feedback question only) where rewards is attached as voucher.
     When post "Video_Feedback_QstnOnly_Voucher" API request for "<testcase>"
     Then verify joy loyalty account "Video_Feedback_QstnOnly_Voucher" details api response for "<testcase>"
@@ -1056,7 +1117,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken |
       | Blank-AccessToken |
 
-  @VideoFeedbackChallenge @Challenge
+  @VideoFeedbackChallenge @Challenge @Regression
   Scenario Outline: Test to verify successfully completion of Video challenge with feedback (User provided only text feedback) where rewards is attached as voucher.
     When post "Video_Feedback_TextOnly_Voucher" API request for "<testcase>"
     Then verify joy loyalty account "Video_Feedback_TextOnly_Voucher" details api response for "<testcase>"
@@ -1065,7 +1126,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken |
       | Blank-AccessToken |
 
-  @VideoFeedbackChallenge @Challenge
+  @VideoFeedbackChallenge @Challenge @Regression
   Scenario Outline: Test to verify successfully completion of Video challenge with feedback (User provided all three types feedback) where rewards is attached as voucher.
     When post "Video_Feedback_AllFdback_Vouche" API request for "<testcase>"
     Then verify joy loyalty account "Video_Feedback_AllFdback_Vouche" details api response for "<testcase>"
@@ -1074,7 +1135,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken |
       | Blank-AccessToken |
 
-  @VideoFeedbackChallenge @Challenge
+  @VideoFeedbackChallenge @Challenge @Regression
   Scenario Outline: Test to verify successfully completion of Video challenge with feedback (User provided only Star Rating) where rewards is attached as raffle.
     When post "Video_Feedback_StarOnly_Raffle" API request for "<testcase>"
     Then verify joy loyalty account "Video_Feedback_StarOnly_Raffle" details api response for "<testcase>"
@@ -1083,7 +1144,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken |
       | Blank-AccessToken |
 
-  @VideoFeedbackChallenge @Challenge
+  @VideoFeedbackChallenge @Challenge @Regression
   Scenario Outline: Test to verify successfully completion of Video challenge with feedback (User answered feedback question only) where rewards is attached as raffle.
     When post "Video_Feedback_QstnOnly_Raffle" API request for "<testcase>"
     Then verify joy loyalty account "Video_Feedback_QstnOnly_Raffle" details api response for "<testcase>"
@@ -1092,7 +1153,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken |
       | Blank-AccessToken |
 
-  @VideoFeedbackChallenge @Challenge
+  @VideoFeedbackChallenge @Challenge @Regression
   Scenario Outline: Test to verify successfully completion of Video challenge with feedback (User provided only text feedback) where rewards is attached as raffle.
     When post "Video_Feedback_TextOnly_Raffle" API request for "<testcase>"
     Then verify joy loyalty account "Video_Feedback_TextOnly_Raffle" details api response for "<testcase>"
@@ -1101,7 +1162,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken |
       | Blank-AccessToken |
 
-  @VideoFeedbackChallenge @Challenge
+  @VideoFeedbackChallenge @Challenge @Regression
   Scenario Outline: Test to verify successfully completion of Video challenge with feedback (User provided all three types feedback) where rewards is attached as raffle.
     When post "Video_Feedback_AllFdback_Raffle" API request for "<testcase>"
     Then verify joy loyalty account "Video_Feedback_AllFdback_Raffle" details api response for "<testcase>"
@@ -1110,7 +1171,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken |
       | Blank-AccessToken |
 
-  @VideoFeedbackChallenge @Challenge
+  @VideoFeedbackChallenge @Challenge @Regression
   Scenario Outline: Test to verify successfully completion of Video challenge with feedback (User provided only Star Rating) where rewards is attached as wallpaper.
     When post "Video_Feedback_StarOnly_Wallppr" API request for "<testcase>"
     Then verify joy loyalty account "Video_Feedback_StarOnly_Wallppr" details api response for "<testcase>"
@@ -1119,7 +1180,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken |
       | Blank-AccessToken |
 
-  @VideoFeedbackChallenge @Challenge
+  @VideoFeedbackChallenge @Challenge @Regression
   Scenario Outline: Test to verify successfully completion of Video challenge with feedback (User answered feedback question only) where rewards is attached as wallpaper.
     When post "Video_Feedback_QstnOnly_Wallppr" API request for "<testcase>"
     Then verify joy loyalty account "Video_Feedback_QstnOnly_Wallppr" details api response for "<testcase>"
@@ -1128,7 +1189,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken |
       | Blank-AccessToken |
 
-  @VideoFeedbackChallenge @Challenge
+  @VideoFeedbackChallenge @Challenge @Regression
   Scenario Outline: Test to verify successfully completion of Video challenge with feedback (User provided only text feedback) where rewards is attached as wallpaper.
     When post "Video_Feedback_TextOnly_Wallppr" API request for "<testcase>"
     Then verify joy loyalty account "Video_Feedback_TextOnly_Wallppr" details api response for "<testcase>"
@@ -1137,7 +1198,7 @@ Feature: Validating KSA Joy API's and Integration API's
       | Valid-AccessToken |
       | Blank-AccessToken |
 
-  @VideoFeedbackChallenge @Challenge
+  @VideoFeedbackChallenge @Challenge @Regression
   Scenario Outline: Test to verify successfully completion of Video challenge with feedback (User provided all three types feedback) where rewards is attached as wallpaper.
     When post "Video_Feedback_AllFdback_Wallpp" API request for "<testcase>"
     Then verify joy loyalty account "Video_Feedback_AllFdback_Wallpp" details api response for "<testcase>"
@@ -1145,3 +1206,430 @@ Feature: Validating KSA Joy API's and Integration API's
       | testcase          |
       | Valid-AccessToken |
       | Blank-AccessToken |
+
+  @Regression @PointHistory
+  Scenario Outline:  Verify Point History Transactions available for customer.
+    Given send get request of joy loyalty "Point_History_Transaction" for "<testcase>"
+    Then verify joy loyalty account "Point_History_Transaction" details api response for "<testcase>"
+    Examples:
+      | testcase          |
+      | Blank-AccessToken |
+      | Valid-AccessToken |
+
+#  @Regression @ScanVersion02
+#  Scenario Outline:  Test to verify successfull completion of scan challenge where rewards is attached as point and Scan Configuration are ->
+#  Vendor	All
+#  Brand	    Lays
+#  Subbrand	All
+#  SKU	    All
+#  Price	    >=20
+#    When post "ScanVer02_Scenario01" API request for "<testcase>"
+#    Then verify joy loyalty account "ScanVer02_Scenario01" details api response for "<testcase>"
+#    Examples:
+#      | testcase                 |
+#      | Valid-AccessToken        |
+#      | Scenario01-WrongPrice    |
+#      | Scenario02-WrongProduct  |
+#      | Scenario03-WrongQuantity |
+#      | VerifySce01-ValidCase    |
+##      | VerifySce02-WrongPrice   |
+##      | VerifySce03-WrongProduct |
+##      | VerifySce04-WrongQuantity|
+#      | Blank-AccessToken        |
+#
+#  @Regression @ScanVersion02
+#  Scenario Outline:  Test to verify successfull completion of scan challenge where rewards is attached as point and Scan Configuration are ->
+#  Vendor	All
+#  Brand	Lays
+#  Subbrand	Max
+#  SKU	All
+#  Price	>=20
+#    When post "ScanVer02_Scenario02" API request for "<testcase>"
+#    Then verify joy loyalty account "ScanVer02_Scenario02" details api response for "<testcase>"
+#    Examples:
+#      | testcase                 |
+#      | Valid-AccessToken        |
+#      | Scenario01-WrongPrice    |
+#      | Scenario02-WrongProduct  |
+#      | Scenario03-WrongQuantity |
+#      | VerifySce01-ValidCase    |
+##      | VerifySce02-WrongPrice   |
+##      | VerifySce03-WrongProduct |
+##      | VerifySce04-WrongQuantity|
+#      | Blank-AccessToken        |
+#
+#  @Regression @ScanVersion02
+#  Scenario Outline:  Test to verify successfull completion of scan challenge where rewards is attached as point and Scan Configuration are ->
+#  Vendor	All
+#  Brand	Lays
+#  Subbrand	Max
+#  SKU	CRM
+#  Price	>=50
+#    When post "ScanVer02_Scenario03" API request for "<testcase>"
+#    Then verify joy loyalty account "ScanVer02_Scenario03" details api response for "<testcase>"
+#    Examples:
+#      | testcase                 |
+#      | Valid-AccessToken        |
+#      | Scenario01-WrongPrice    |
+#      | Scenario02-WrongProduct  |
+#      | Scenario03-WrongQuantity |
+#      | VerifySce01-ValidCase    |
+##      | VerifySce02-WrongPrice   |
+##      | VerifySce03-WrongProduct |
+##      | VerifySce04-WrongQuantity|
+#      | Blank-AccessToken        |
+#
+#  @Regression @ScanVersion02
+#  Scenario Outline:  Test to verify successfull completion of scan challenge where rewards is attached as point and Scan Configuration are ->
+#  Vendor	All
+#  Brand	Lays	or	Doritos
+#  Subbrand	All
+#  SKU	All
+#  Price	>=20
+#    When post "ScanVer02_Scenario04" API request for "<testcase>"
+#    Then verify joy loyalty account "ScanVer02_Scenario04" details api response for "<testcase>"
+#    Examples:
+#      | testcase                 |
+#      | Valid-AccessToken        |
+#      | Scenario01-WrongPrice    |
+#      | Scenario02-WrongProduct  |
+#      | Scenario03-WrongQuantity |
+#      | VerifySce01-ValidCase    |
+##      | VerifySce02-WrongPrice   |
+##      | VerifySce03-WrongProduct |
+##      | VerifySce04-WrongQuantity|
+#      | Blank-AccessToken        |
+#
+#  @Regression @ScanVersion02
+#  Scenario Outline:  Test to verify successfull completion of scan challenge where rewards is attached as reward(Voucher) and Scan Configuration are ->
+#  Vendor	All
+#  Brand	Lays	And	Doritos
+#  Subbrand	All
+#  SKU	All
+#  Price	>=20
+#    When post "ScanVer02_Scenario05" API request for "<testcase>"
+#    Then verify joy loyalty account "ScanVer02_Scenario05" details api response for "<testcase>"
+#    Examples:
+#      | testcase                 |
+#      | Valid-AccessToken        |
+#      | Scenario01-WrongPrice    |
+#      | Scenario02-WrongProduct  |
+#      | Scenario03-WrongQuantity |
+#      | VerifySce01-ValidCase    |
+##      | VerifySce02-WrongPrice   |
+##      | VerifySce03-WrongProduct |
+##      | VerifySce04-WrongQuantity|
+#      | Blank-AccessToken        |
+#
+#  @Regression @ScanVersion02
+#  Scenario Outline:  Test to verify successfull completion of scan challenge where rewards is attached as reward(Voucher) and Scan Configuration are ->
+#  Vendor	All
+#  Brand	Lays	or	Doritos
+#  Subbrand	Max		Cheese
+#  SKU	All
+#  Price	>=50
+#    When post "ScanVer02_Scenario06" API request for "<testcase>"
+#    Then verify joy loyalty account "ScanVer02_Scenario06" details api response for "<testcase>"
+#    Examples:
+#      | testcase                 |
+#      | Valid-AccessToken        |
+#      | Scenario01-WrongPrice    |
+#      | Scenario02-WrongProduct  |
+#      | Scenario03-WrongQuantity |
+#      | VerifySce01-ValidCase    |
+##      | VerifySce02-WrongPrice   |
+##      | VerifySce03-WrongProduct |
+##      | VerifySce04-WrongQuantity|
+#      | Blank-AccessToken        |
+#
+#  @Regression @ScanVersion02
+#  Scenario Outline:  Test to verify successfull completion of scan challenge where rewards is attached as reward(Voucher) and Scan Configuration are ->
+#  Vendor	All
+#  Brand	Lays	or	Doritos
+#  Subbrand	Max		CHZ
+#  SKU	CRM		030GX014X4
+#  Price	>=50
+#    When post "ScanVer02_Scenario07" API request for "<testcase>"
+#    Then verify joy loyalty account "ScanVer02_Scenario07" details api response for "<testcase>"
+#    Examples:
+#      | testcase                 |
+#      | Valid-AccessToken        |
+#      | Scenario01-WrongPrice    |
+#      | Scenario02-WrongProduct  |
+#      | Scenario03-WrongQuantity |
+#      | VerifySce01-ValidCase    |
+##      | VerifySce02-WrongPrice   |
+##      | VerifySce03-WrongProduct |
+##      | VerifySce04-WrongQuantity|
+#      | Blank-AccessToken        |
+#
+#  @Regression @ScanVersion02
+#  Scenario Outline:  Test to verify successfull completion of scan challenge where rewards is attached as reward(Voucher) and Scan Configuration are ->
+#  Vendor	All
+#  Brand	Lays
+#  Subbrand	All
+#  SKU	All
+#  Price	>=20	And
+#  Quantity	>=5
+#    When post "ScanVer02_Scenario08" API request for "<testcase>"
+#    Then verify joy loyalty account "ScanVer02_Scenario08" details api response for "<testcase>"
+#    Examples:
+#      | testcase                 |
+#      | Valid-AccessToken        |
+#      | Scenario01-WrongPrice    |
+#      | Scenario02-WrongProduct  |
+#      | Scenario03-WrongQuantity |
+#      | VerifySce01-ValidCase    |
+##      | VerifySce02-WrongPrice   |
+##      | VerifySce03-WrongProduct |
+##      | VerifySce04-WrongQuantity|
+#      | Blank-AccessToken        |
+#
+#  @Regression @ScanVersion02
+#  Scenario Outline:  Test to verify successfull completion of scan challenge where rewards is attached as wallpaper and Scan Configuration are ->
+#  Vendor	All
+#  Brand	Lays
+#  Subbrand	Max
+#  SKU	All
+#  Price	>=20	And
+#  Quantity	>=4
+#    When post "ScanVer02_Scenario09" API request for "<testcase>"
+#    Then verify joy loyalty account "ScanVer02_Scenario09" details api response for "<testcase>"
+#    Examples:
+#      | testcase                 |
+#      | Valid-AccessToken        |
+#      | Scenario01-WrongPrice    |
+#      | Scenario02-WrongProduct  |
+#      | Scenario03-WrongQuantity |
+#      | VerifySce01-ValidCase    |
+##      | VerifySce02-WrongPrice   |
+##      | VerifySce03-WrongProduct |
+##      | VerifySce04-WrongQuantity|
+#      | Blank-AccessToken        |
+#
+#  @Regression @ScanVersion02
+#  Scenario Outline:  Test to verify successfull completion of scan challenge where rewards is attached as wallpaper and Scan Configuration are ->
+#  Vendor	All
+#  Brand	Lays
+#  Subbrand	Max
+#  SKU	CRM
+#  Price	>=20	And
+#  Quantity	>=4
+#    When post "ScanVer02_Scenario10" API request for "<testcase>"
+#    Then verify joy loyalty account "ScanVer02_Scenario10" details api response for "<testcase>"
+#    Examples:
+#      | testcase                 |
+#      | Valid-AccessToken        |
+#      | Scenario01-WrongPrice    |
+#      | Scenario02-WrongProduct  |
+#      | Scenario03-WrongQuantity |
+#      | VerifySce01-ValidCase    |
+##      | VerifySce02-WrongPrice   |
+##      | VerifySce03-WrongProduct |
+##      | VerifySce04-WrongQuantity|
+#      | Blank-AccessToken        |
+#
+#  @Regression @ScanVersion02
+#  Scenario Outline:  Test to verify successfull completion of scan challenge where rewards is attached as wallpaper and Scan Configuration are ->
+#  Vendor	All
+#  Brand	Lays	And	Doritos
+#  Subbrand	All
+#  SKU	All
+#  Price	>=20	And
+#  Quantity	>=12
+#    When post "ScanVer02_Scenario11" API request for "<testcase>"
+#    Then verify joy loyalty account "ScanVer02_Scenario11" details api response for "<testcase>"
+#    Examples:
+#      | testcase                 |
+#      | Blank-AccessToken        |
+#      | Scenario01-WrongPrice    |
+#      | Scenario02-WrongProduct  |
+#      | Scenario03-WrongQuantity |
+#      | VerifySce01-ValidCase    |
+##      | VerifySce02-WrongPrice   |
+##      | VerifySce03-WrongProduct |
+##      | VerifySce04-WrongQuantity|
+#      | Blank-AccessToken        |
+#
+#  @Regression @ScanVersion02
+#  Scenario Outline:  Test to verify successfull completion of scan challenge where rewards is attached as raffle and Scan Configuration are ->
+#  Vendor	All
+#  Brand	Lays	or	Doritos
+#  Subbrand	Max		CHZ
+#  SKU	All
+#  Price	>=50	And
+#  Quantity	>=3
+#    When post "ScanVer02_Scenario12" API request for "<testcase>"
+#    Then verify joy loyalty account "ScanVer02_Scenario12" details api response for "<testcase>"
+#    Examples:
+#      | testcase                 |
+#      | Blank-AccessToken        |
+#      | Scenario01-WrongPrice    |
+#      | Scenario02-WrongProduct  |
+#      | Scenario03-WrongQuantity |
+#      | VerifySce01-ValidCase    |
+##      | VerifySce02-WrongPrice   |
+##      | VerifySce03-WrongProduct |
+##      | VerifySce04-WrongQuantity|
+#      | Blank-AccessToken        |
+#
+#  @Regression @ScanVersion02
+#  Scenario Outline:  Test to verify successfull completion of scan challenge where rewards is attached as raffle and Scan Configuration are ->
+#  Vendor	All
+#  Brand	Lays	or	Doritos
+#  Subbrand	Max		CHZ
+#  SKU	CRM		030GX014X4
+#  Price	>=50	And
+#  Quantity	>=3
+#    When post "ScanVer02_Scenario13" API request for "<testcase>"
+#    Then verify joy loyalty account "ScanVer02_Scenario13" details api response for "<testcase>"
+#    Examples:
+#      | testcase                 |
+#      | Blank-AccessToken        |
+#      | Scenario01-WrongPrice    |
+#      | Scenario02-WrongProduct  |
+#      | Scenario03-WrongQuantity |
+#      | VerifySce01-ValidCase    |
+##      | VerifySce02-WrongPrice   |
+##      | VerifySce03-WrongProduct |
+##      | VerifySce04-WrongQuantity|
+#      | Blank-AccessToken        |
+#
+#  @Regression @ScanVersion02
+#  Scenario Outline:  Test to verify successfull completion of scan challenge where rewards is attached as raffle and Scan Configuration are ->
+#  Vendor	All
+#  Brand	Lays	And	Doritos
+#  Subbrand	Max		CHZ
+#  SKU	CRM		030GX014X4
+#  Price	>=50	And
+#  Quantity	>=3
+#    When post "ScanVer02_Scenario14" API request for "<testcase>"
+#    Then verify joy loyalty account "ScanVer02_Scenario14" details api response for "<testcase>"
+#    Examples:
+#      | testcase                 |
+#      | Blank-AccessToken        |
+#      | Scenario01-WrongPrice    |
+#      | Scenario02-WrongProduct  |
+#      | Scenario03-WrongQuantity |
+#      | VerifySce01-ValidCase    |
+##      | VerifySce02-WrongPrice   |
+##      | VerifySce03-WrongProduct |
+##      | VerifySce04-WrongQuantity|
+#      | Blank-AccessToken        |
+#
+#  @Regression @ScanVersion02
+#  Scenario Outline:  Test to verify successfull completion of scan challenge where rewards is attached as raffle and Scan Configuration are ->
+#  Vendor	All
+#  Brand	Lays	And	Doritos
+#  Subbrand	Max		CHZ
+#  SKU	CRM		030GX014X4
+#  Price	Empty
+#  Quantity	>=3
+#    When post "ScanVer02_Scenario15" API request for "<testcase>"
+#    Then verify joy loyalty account "ScanVer02_Scenario15" details api response for "<testcase>"
+#    Examples:
+#      | testcase                 |
+#      | Blank-AccessToken        |
+#      | Scenario01-WrongPrice    |
+#      | Scenario02-WrongProduct  |
+#      | Scenario03-WrongQuantity |
+#      | VerifySce01-ValidCase    |
+##      | VerifySce02-WrongPrice   |
+##      | VerifySce03-WrongProduct |
+##      | VerifySce04-WrongQuantity|
+#      | Blank-AccessToken        |
+#
+#  @Regression @ScanVersion02
+#  Scenario Outline:  Test to verify successfull completion of scan challenge where rewards is attached as raffle and Scan Configuration are ->
+#  Vendor	All
+#  Brand	Lays	And	Doritos
+#  Subbrand	Max		CHZ
+#  SKU	CRM		030GX014X4
+#  Price	Empty
+#  Quantity	>=3
+#    When post "ScanVer02_Scenario16" API request for "<testcase>"
+#    Then verify joy loyalty account "ScanVer02_Scenario16" details api response for "<testcase>"
+#    Examples:
+#      | testcase                 |
+#      | Blank-AccessToken        |
+#      | Scenario01-WrongPrice    |
+#      | Scenario02-WrongProduct  |
+#      | VerifySce01-ValidCase    |
+##      | VerifySce02-WrongPrice   |
+##      | VerifySce03-WrongProduct |
+##      | VerifySce04-WrongQuantity|
+#      | Blank-AccessToken        |
+#
+#  @Regression @ScanVersion021
+#  Scenario Outline:  Test to verify successfull completion of scan challenge where rewards is attached as raffle and Scan Configuration are ->
+#  Vendor	All
+#  Brand	Lays	And	Doritos
+#  Subbrand	Max		CHZ
+#  SKU	CRM		030GX014X4
+#  Price	>=50	OR
+#  Quantity	>=15
+#    When post "ScanVer02_Scenario17" API request for "<testcase>"
+#    Then verify joy loyalty account "ScanVer02_Scenario17" details api response for "<testcase>"
+#    Examples:
+#      | testcase                 |
+#      | Blank-AccessToken        |
+#      | Scenario01-WrongPrice    |
+#      | Scenario02-WrongProduct  |
+#      | VerifySce01-ValidCase    |
+##      | VerifySce02-WrongPrice   |
+##      | VerifySce03-WrongProduct |
+##      | VerifySce04-WrongQuantity|
+#      | Blank-AccessToken        |
+#
+#  @Regression @ScanVersion03
+#  Scenario Outline:  Test to verify successfully completion of scan challenge where dispute reason is "Currency code  is blank or not a SAR, Attribution is in Handwritten characters,Document is Handwritten, Total is Negative, Vendor name is blank, Color is red, Color is yellow, Attribution is in LCD photo" ->
+#    When post "ScanVer02_Scenario18" API request for "<testcase>"
+#    Then verify joy loyalty account "ScanVer02_Scenario18" details api response for "<testcase>"
+#    Examples:
+#      | testcase                          |
+#      | Blank-AccessToken                 |
+#      | Scenario01-Currency Code Blank    |
+#      | Scenario03-Doc Handwritten        |
+#      | Scenario04-Total is Negative      |
+#      | Scenario05-Vendor Blank           |
+#      | Scenario06-Color Red              |
+#      | Scenario07-Color Yellow           |
+#      | Scenario08-LCD Attribution        |
+
+
+  @Regression @AutoHideReward
+  Scenario Outline: Verify AutoHideReward Availability after reached its threshold.
+    Given send get request of joy loyalty "AutoHideReward" for "<testcase>"
+    Then verify joy loyalty "AutoHideReward" details api response for "<testcase>"
+    Examples:
+      | testcase          |
+      | Valid-AccessToken |
+
+
+  @Regression @Funzone
+  Scenario Outline: Verify availability of Raffle winner list in Funzone feature
+    Given send get request of joy loyalty "Fnzn_RaffleWinnerList" for "<testcase>"
+    Then verify joy loyalty account "Fnzn_RaffleWinnerList" details api response for "<testcase>"
+    Examples:
+      | testcase          |
+      | Blank-AccessToken |
+      | Valid-AccessToken |
+
+  @Regression @Funzone
+  Scenario Outline: Verify availability of Raffle winner records in Funzone feature
+    Given send get request of joy loyalty "Fnzn_RaffleWinnerrecords" for "<testcase>"
+    Then verify joy loyalty account "Fnzn_RaffleWinnerrecords" details api response for "<testcase>"
+    Examples:
+      | testcase          |
+      | Blank-AccessToken |
+      | Valid-AccessToken |
+
+  @Regression @Funzone
+  Scenario Outline: Verify availability of Raffle winner list in Funzone feature
+    Given send get request of joy loyalty "Fnzn_CustomerTestmnlsList" for "<testcase>"
+    Then verify joy loyalty account "Fnzn_CustomerTestmnlsList" details api response for "<testcase>"
+    Examples:
+      | testcase          |
+      | Blank-AccessToken |
+      | Valid-AccessToken |
+
